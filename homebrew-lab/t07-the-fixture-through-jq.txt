@@ -1,0 +1,10 @@
+$ jq --version   # the sandbox distro jq, NOT a brewed jq - see criteria.md
+jq-1.7
+$ jq -r ".items[] | select(.stock > 0) | .name" fixtures/stall.json
+lamp oil
+cotton wick
+$ jq "[.items[].price] | add" fixtures/stall.json
+11.75
+$ jq -e ".open" fixtures/stall.json
+true
+exit: 0

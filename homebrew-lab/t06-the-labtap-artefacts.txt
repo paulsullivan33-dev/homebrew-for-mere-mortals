@@ -1,0 +1,36 @@
+$ cat fixtures/brasslamp-1.0.0/brasslamp
+#!/bin/sh
+# brasslamp - a tiny invented program. It exists so this guide's lab
+# has something harmless of its own to package: it prints one line.
+if [ $# -gt 0 ]; then
+  echo "The brass lamp is lit for $1."
+else
+  echo "The brass lamp is lit."
+fi
+$ sh fixtures/brasslamp-1.0.0/brasslamp
+The brass lamp is lit.
+$ sh fixtures/brasslamp-1.0.0/brasslamp Ada
+The brass lamp is lit for Ada.
+$ sha256sum fixtures/brasslamp-1.0.0.tar.gz
+f0f129fe7c59204aa6a5fe575aaa76fbe5e92ada2bc8acfba547ec616afa0326  fixtures/brasslamp-1.0.0.tar.gz
+$ cat homebrew-labtap/Formula/brasslamp.rb
+class Brasslamp < Formula
+  desc "Tiny invented program that prints one line about a brass lamp"
+  homepage "https://example.invalid/brasslamp"
+  url "file:///home/hatch/workspace/homebrew-labwork/fixtures/brasslamp-1.0.0.tar.gz"
+  sha256 "f0f129fe7c59204aa6a5fe575aaa76fbe5e92ada2bc8acfba547ec616afa0326"
+  license "MIT"
+
+  def install
+    bin.install "brasslamp"
+  end
+
+  test do
+    assert_match "The brass lamp is lit.", shell_output("#{bin}/brasslamp")
+    assert_match "The brass lamp is lit for Ada.", shell_output("#{bin}/brasslamp Ada")
+  end
+end
+$ git -C homebrew-labtap log --oneline
+6ec98ab Add the brasslamp formula
+$ git -C homebrew-labtap status --porcelain
+(clean)

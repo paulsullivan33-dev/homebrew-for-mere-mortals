@@ -1,0 +1,14 @@
+$ export HOMEBREW_PREFIX=$LAB/prefix HOMEBREW_CELLAR=$LAB/prefix/Cellar HOMEBREW_REPOSITORY=$LAB/prefix/brew HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_INSTALL_CLEANUP=1
+$ brew --version
+Homebrew >=4.3.0 (shallow or no git repository)
+exit: 0
+$ brew doctor
+Error: Running Homebrew as root is extremely dangerous and no longer supported.
+As Homebrew does not drop privileges on installation you would be giving all
+build scripts full access to your system.
+exit: 1
+$ brew install jq
+Error: Running Homebrew as root is extremely dangerous and no longer supported.
+As Homebrew does not drop privileges on installation you would be giving all
+build scripts full access to your system.
+exit: 1

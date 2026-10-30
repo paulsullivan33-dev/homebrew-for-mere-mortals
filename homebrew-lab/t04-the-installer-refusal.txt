@@ -1,0 +1,7 @@
+$ curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh -o install.sh  # 35651 bytes, fetched for inspection
+$ grep -n "Don't run this as root" install.sh
+443:  abort "Don't run this as root!"
+$ NONINTERACTIVE=1 bash install.sh < /dev/null
+==> Running in non-interactive mode because `$NONINTERACTIVE` is set.
+Don't run this as root!
+exit: 1

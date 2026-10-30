@@ -1,0 +1,8 @@
+#!/bin/sh
+# brasslamp - a tiny invented program. It exists so this guide's lab
+# has something harmless of its own to package: it prints one line.
+if [ $# -gt 0 ]; then
+  echo "The brass lamp is lit for $1."
+else
+  echo "The brass lamp is lit."
+fi

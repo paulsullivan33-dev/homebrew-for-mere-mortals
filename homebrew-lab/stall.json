@@ -1,0 +1,9 @@
+{
+  "stall": "Brass and Thread",
+  "open": true,
+  "items": [
+    { "name": "lamp oil", "price": 4.50, "stock": 12 },
+    { "name": "cotton wick", "price": 1.25, "stock": 40 },
+    { "name": "brass polish", "price": 6.00, "stock": 0 }
+  ]
+}

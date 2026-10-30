@@ -1,0 +1,16 @@
+$ git clone --depth=1 https://github.com/Homebrew/brew prefix/brew
+Cloning into 'prefix/brew'...
+exit: 0
+$ git -C prefix/brew log -1 --format="%H %cs %s"
+411ad3ef42e94b1c3d05a19fe289c13f0ce70f6b 2026-10-30 Merge pull request #24402 from Homebrew/preserve-installed-rpaths
+$ cat prefix/brew/Library/Homebrew/version.rb | head -8
+# typed: strict
+# frozen_string_literal: true
+
+require "version/parser"
+
+# A formula's version.
+class Version
+  include Comparable
+$ du -sh prefix/brew
+34M	prefix/brew

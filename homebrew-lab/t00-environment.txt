@@ -1,0 +1,12 @@
+$ whoami
+root
+$ id
+uid=0(root) gid=0(root) groups=0(root)
+$ uname -srm
+Linux 7.0.0-39-generic x86_64
+$ git --version
+git version 2.43.0
+$ which ruby
+(no ruby on PATH)
+$ echo $HOME
+/home/hatch

@@ -1,0 +1,35 @@
+$ brew --prefix
+/home/hatch/workspace/homebrew-labwork/prefix/brew
+exit: 0
+$ brew --cellar
+/home/hatch/workspace/homebrew-labwork/prefix/brew/Cellar
+exit: 0
+$ brew --repository
+/home/hatch/workspace/homebrew-labwork/prefix/brew
+exit: 0
+$ brew list
+exit: 0
+$ brew info jq
+Error: Running Homebrew as root is extremely dangerous and no longer supported.
+As Homebrew does not drop privileges on installation you would be giving all
+build scripts full access to your system.
+exit: 1
+$ brew config
+Error: Running Homebrew as root is extremely dangerous and no longer supported.
+As Homebrew does not drop privileges on installation you would be giving all
+build scripts full access to your system.
+exit: 1
+$ git ls-remote --tags https://github.com/Homebrew/brew | tail -3
+8e858db5584704dcd469b8e826228c0d5a5a94f6	refs/tags/7.0.7
+a57af195cf9d7addb48bdb1204c9151313cd0057	refs/tags/7.0.8
+cdc1ca503231b9a96da64526774915d913c3ec9f	refs/tags/7.0.9
+$ mv prefix/brew prefix/Homebrew   # the repository has a proper home in the layout: $HOMEBREW_PREFIX/Homebrew
+$ brew --prefix
+/home/hatch/workspace/homebrew-labwork/prefix/Homebrew
+exit: 0
+$ brew --cellar
+/home/hatch/workspace/homebrew-labwork/prefix/Homebrew/Cellar
+exit: 0
+$ brew --version
+Homebrew >=4.3.0 (shallow or no git repository)
+exit: 0

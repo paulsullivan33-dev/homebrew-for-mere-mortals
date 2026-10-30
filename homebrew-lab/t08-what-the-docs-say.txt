@@ -1,0 +1,26 @@
+$ grep -n "default prefix" Installation.md | head -2
+9:The script installs Homebrew to its default prefix (`/opt/homebrew` for Apple Silicon and `/home/linuxbrew/.linuxbrew` for Linux) so that [you don’t need *sudo* after Homebrew's initial installation](FAQ.md#why-does-homebrew-say-sudo-is-bad) when you install formulae.
+16:The macOS `.pkg` installer supports only Apple Silicon and also installs Homebrew to its default prefix (`/opt/homebrew`) for the same reasons as above.
+$ grep -n "linuxbrew/.linuxbrew" Homebrew-on-Linux.md | head -2
+27:The installation script installs Homebrew to `/home/linuxbrew/.linuxbrew`, which allows the use of most binary packages (bottles).
+34:eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+$ grep -n "build-essential" Homebrew-on-Linux.md
+59:  sudo apt-get install build-essential procps curl file git
+$ grep -n "Non-official taps require explicit trust" Tap-Trust.md
+11:Non-official taps require explicit trust by default [since Homebrew 6.0.0](https://brew.sh/2026/06/11/homebrew-6.0.0/).
+$ grep -n "app_image" Cask-Cookbook.md | head -1
+79:    app_image
+$ grep -n "systemd" ../Library/Homebrew/services.rb 2>/dev/null | head -2
+$ ls .. (the checkout root)
+AGENTS.md
+CHANGELOG.md
+CLAUDE.md
+CODEOWNERS
+CONTRIBUTING.md
+Dockerfile
+LICENSE.txt
+Library
+README.md
+bin
+completions
+docs
